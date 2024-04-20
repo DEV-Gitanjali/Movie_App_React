@@ -1,7 +1,9 @@
+
 import React from 'react';
 import { Link } from "react-router-dom";
 
-const Sidenav = () => {
+const Sidenav =() => {
+  
   return (
     <div className='w-1/5 h-full border-r-2 border-zinc-200 p-3'>
       <h1 className='text-2xl text-white font-black'>
@@ -23,6 +25,7 @@ const Sidenav = () => {
         <i className=" mr-2 ri-tv-2-fill"></i>TV Shows</Link>
         <Link className='hover:bg-[#6556cd] hover:text-white   duration-300 rounded p-3'>
         <i className=" mr-2 ri-team-fill"></i>People</Link>
+         
       </nav>
         
            <hr className='border-none h-[1px] bg-zinc-400 mt-3'/>
@@ -39,6 +42,7 @@ const Sidenav = () => {
       </nav>
     </div>
   )
-} 
+}
+
 
 export default Sidenav; 
