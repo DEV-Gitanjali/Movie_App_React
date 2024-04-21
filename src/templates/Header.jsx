@@ -4,7 +4,7 @@
 import { Link } from "react-router-dom";
 
 const Header = ({ data }) => {
-  console.log(data);
+  // console.log(data);
   return (
     <div
      
@@ -13,9 +13,10 @@ const Header = ({ data }) => {
         data.backdrop_path || data.profile_path
       })`,
       backgroundpossition:"center",
-      backgroundSize:"cover" ,
+      backgroundSize:"cover",
+      backgroundnorepeat:"no-repeat"
     }}
-      className='w-full h-[50vh] flex flex-col justify-end  p-[10%] '
+      className='w-full h-[50vh] flex flex-col justify-end  items-start p-[10%] '
     >
       <h1 className='w-[70%]text-5xl font-black text-white'>{data.name || data.title || data.original_name || data.original_title}</h1>
 
@@ -30,6 +31,22 @@ const Header = ({ data }) => {
           more
         </Link>
       </p>
+      
+   <p className="text-white">
+        <i className="text-yellow-500 ri-megaphone-fill"></i>
+        {data.release_date || "No Information"}
+        <i className="text-yellow-500 ml-5 ri-album-fill"></i>
+        {data.media_type.toUpperCase()}
+      </p>
+
+   
+
+      <Link
+        to={`/${data.media_type}/details/${data.id}/trailer`}
+        className="bg-[#6556cd] mt-5 text-white rounded-lg p-2"
+      >
+        Watch Trailer
+      </Link>
 
 
      

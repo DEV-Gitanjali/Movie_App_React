@@ -18,7 +18,7 @@ const Home = () => {
     }
   };
 
-  console.log(wallpaper);
+  // console.log(wallpaper);
 
   useEffect(() => {
     !wallpaper && getHeaderWallpaper();
