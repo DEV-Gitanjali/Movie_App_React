@@ -12,38 +12,40 @@ const Home = () => {
 
   const [wallpaper, setwallpaper] = useState(null);
   const [trending, setTrending] = useState(null);
-  const [category, setcategory] = useState("all");
+  const [category , setcategory] = useState("all");
 
 
-  const getHeaderWallpaper = async () => {
+  const GetHeaderWallpaper = async () => {
     try {
       const { data } = await axios.get(`/trending/all/day`);
-      const randomData = data.results[Math.floor(Math.random() * data.results.length)];
-      setwallpaper(randomData);
-    } catch (error) {
-      console.log('Error:', error);
-    }
+      let randomdata =
+          data.results[(Math.random() * data.results.length).toFixed()];
+      setwallpaper(randomdata);
+  } catch (error) {
+      console.log("Error: ", error);
+  }
   };
 
 
-  const getTrending = async () => {
+  const GetTrending = async () => {
     try {
       const { data } = await axios.get(`/trending/${category}/day`);
       setTrending(data.results);
       // console.log(randomWallpaper);
     } catch (err) {
-      console.log("Error: ", err);
+      console.log("Error: ", error);
     }
   };
 
-  // console.log(wallpaper);
+  console.log(wallpaper);
 
   useEffect(() => {
-    !wallpaper && getHeaderWallpaper();
+    GetTrending();
+    !wallpaper && GetHeaderWallpaper();
     // !trending && getTrending();
   }, [category]);
 
-  // console.log(trending);
+  console.log(trending);
 
   return wallpaper && trending  ? (
     <>
@@ -62,8 +64,7 @@ const Home = () => {
                         func={(e) => setcategory(e.target.value)}
                     />
                 </div>
-
-
+                
         <HorizentalCards data={trending}/>
 
       </div>
