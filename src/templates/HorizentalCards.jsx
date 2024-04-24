@@ -1,18 +1,18 @@
-// import React from 'react'
+import React from 'react'
 
 import { Link } from "react-router-dom";
-import noImage from "/noimage.jpg";
+import noimage from "/noimage.jpg";
 
 // import Dropdown from "./Dropdown";
 
-const HorizentalCards = ({ data }) => {
+const HorizentalCards = ({ data, title }) => {
   // console.log(data);
   return (
     <div className="w-[100%] flex overflow-y-hidden mb-5 p-5">
       {data.length > 0 ? (
         data.map((d, i) => (
           <Link
-            to={`/${d.media_type}/details/${d.id}`}
+            to={`/${d.media_type || title }/details/${d.id}`}
             key={i}
             className="min-w-[15%] h-[45vh] mr-5 mb-2 bg-zinc-900 pb-2 overflow-hidden"
           >
@@ -23,7 +23,7 @@ const HorizentalCards = ({ data }) => {
                   ? `https://image.tmdb.org/t/p/original/${
                       d.backdrop_path || d.poster_path
                     }`
-                  : noImage
+                  : noimage
               }
               alt=""
             />
