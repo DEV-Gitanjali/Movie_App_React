@@ -50,7 +50,7 @@ const Popular = () => {
 }, [category]);
 
 return popular.length > 0 ? (
-    <div className="w-screen h-screen ml-0 ">
+    <div className="w-screen h-screen  ">
         <div className=" px-[5%] w-full flex items-center justify-between ">
             <h1 className=" text-2xl font-semibold text-zinc-400">
                 <i
