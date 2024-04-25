@@ -8,13 +8,14 @@ import Loading from './Loading';
 import InfiniteScroll from "react-infinite-scroll-component";
 
 const Trending = () => {
-    document.title ="Trending";
+    
   const navigate = useNavigate();
     const [category, setcategory] =useState("all");
     const [duration, setduration] =useState("day");
     const [trending, settrending] =useState([]);
       const [page , setpage] =useState(1);
       const [hasMore , sethasMore] =useState(true);
+      document.title = "Trending "  + category.toUpperCase();
 
       const GetTrending = async () => {
         try {

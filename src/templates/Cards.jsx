@@ -13,7 +13,7 @@ const Cards = ({ data, title }) => {
             <Link className='w-[25vh] mr-[5%] mb-[5%]' key={i}>
               <img
                 className=' shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] h-[40vh] object-cover'
-                src={`https://image.tmdb.org/t/p/original/${c.backdrop_path || c.profile_path}`}
+                src={`https://image.tmdb.org/t/p/original/${c.backdrop_path || c.poster_path}`}
                 alt=''
               />
 
