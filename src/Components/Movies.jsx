@@ -8,7 +8,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Cards from "../templates/Cards";
 
 
-const Movie = ()=>{
+const Movies = ()=>{
 
     const navigate = useNavigate();
     const [category, setcategory] =useState("now_playing");
@@ -81,7 +81,7 @@ const Movie = ()=>{
             hasMore={hasMore}
             loader={<h1>Loading...</h1>}
         >
-            <Cards data={movie} title={category} />
+            <Cards data={movie} title="movie"/>
         </InfiniteScroll>
     </div>
 ) : (
@@ -89,4 +89,4 @@ const Movie = ()=>{
 );
 }
 
-export default Movie
+export default Movies
