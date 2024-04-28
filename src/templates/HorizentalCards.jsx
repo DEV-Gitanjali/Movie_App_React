@@ -10,7 +10,7 @@ const HorizentalCards = ({ data, title }) => {
                 <Link
                     to={`/${d.media_type || title}/details/${d.id}`}
                     key={i}
-                    className="min-w-[15%] h-[40vh]  bg-zinc-900 mr-5 mb-5"
+                    className="min-w-[15%] h-[45vh]  bg-zinc-900 mr-5 mb-5"
                 >
                     <img
                         className="w-full h-[55%] object-cover"
