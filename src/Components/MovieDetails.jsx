@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-// import { removemovie } from '../Store/reducers/movieSlice';
-import { Link, Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
-import { asyncloadmovie , removemovie } from '../Store/actions/movieActions';
+import { Link, Outlet, useLocation, useNavigate, useParams, } from 'react-router-dom';
+import { asyncloadmovie , removemovie  } from '../Store/actions/movieActions';
 import HorizentalCards from "../templates/HorizentalCards";
 import Loading from './Loading';
 
 
 const MovieDetails = () => {
-  document.title = "SCSDB | Movie Details";
+    document.title = "Movie Details";
 
     const { pathname } = useLocation();
     const navigate = useNavigate();
@@ -21,6 +20,7 @@ const MovieDetails = () => {
             dispatch(removemovie());
         };
     }, [id]);
+    
     return info ? (
         <div
             style={{
@@ -103,7 +103,7 @@ const MovieDetails = () => {
                     <p className="mb-10">{info.translations.join(", ")}</p>
 
                     <Link
-                        className="p-3 bg-[#6556CD] rounded-lg"
+                        className="p-5 bg-[#6556CD] rounded-lg"
                         to={`${pathname}/trailer`}
                     >
                         <i className="text-xl ri-play-fill mr-3 "></i>
@@ -166,7 +166,7 @@ const MovieDetails = () => {
                 Recommendations & Similar stuff
             </h1>
             <HorizentalCards
-                title="movie"
+                // title="movie"
                 data={
                     info.recommendations.length > 0
                         ? info.recommendations
