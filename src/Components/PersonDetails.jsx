@@ -1,6 +1,6 @@
 import React, { useEffect , useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, Outlet, useLocation, useNavigate, useParams, } from 'react-router-dom';
+import { Link,  useLocation, useNavigate, useParams, } from 'react-router-dom';
 import { asyncloadperson , removeperson  } from '../Store/actions/PersonActions';
 import HorizentalCards from "../templates/HorizentalCards";
 import Dropdown from "../templates/Dropdown";
