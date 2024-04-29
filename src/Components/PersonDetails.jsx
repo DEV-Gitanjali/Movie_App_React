@@ -31,7 +31,7 @@ const PersonDetails = () => {
 
 
 
-  return info ? <div className='px-[10%]  w-screen  h-screen  h-[180vh] bg-[#1F1E24]'>
+  return info ? <div className='px-[10%]  w-screen  h-screen  h-[220vh] bg-[#1F1E24]'>
 
     {/* Part 1 navigation */}
     <nav className="h-[10vh] w-full text-zinc-100 flex items-center gap-10 text-xl ">
@@ -141,7 +141,33 @@ const PersonDetails = () => {
 
                     <Dropdown title="category" options={["tv" , "movie"]} func={(e)=> setcategory(e.target.value)}/>
                   </div>
+                     
+                     <div className=' list-disc text-zinc-400 w-full h-[50vh] mt-5  overflow-x-hidden overflow-y-auto shadow-2xl  shadow-[rgba(255,255,255,.3)] border-zinc-700  p-5'>
 
+                     {info[category + "Credits"].cast.map((c, i) => (
+                            <li
+                                key={i}
+                                className="hover:text-white p-5 rounded hover:bg-[#19191d]  duration-300 cursor-pointer">
+                                <Link
+                                    to={`/${category}/details/${c.id}`}>
+                                    <span>
+                                        {" "}
+                                        {c.name ||
+                                            c.title ||
+                                            c.original_name ||
+                                            c.original_title}
+                                    </span>
+
+                                    <span className="block ml-5 mt-2">
+                                        {c.character &&
+                                            `Character Name:  ${c.character}`}
+                                    </span>
+                                </Link>
+                            </li>
+                        ))}
+
+                        
+                     </div>
 
 
                   </div>
